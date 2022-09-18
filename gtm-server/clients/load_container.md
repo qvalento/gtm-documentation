@@ -35,3 +35,6 @@ To be honest, this probably doesn't do anything good on your website anyways. It
   
 ## Debugging
 When debugging the container, a request will be sent to googletagmanager.com so make sure to turn off ad blockers in those cases.
+
+## Are you interested in getting it installed?
+Reach out to linus.larsson@qvalento.com. 
