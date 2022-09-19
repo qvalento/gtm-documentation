@@ -7,10 +7,10 @@ Our solution solves this by sending the request completely without identifiers f
 ## Script modifications
 To make this work, you will have to modify the standard GTM script a bit. 
 
-### Remove the <noscript> tag in body
+### Remove the `<noscript>` tag in body
 To be honest, this probably doesn't do anything good on your website anyways. It only allows a very few tags, since it only kicks in if the user has disabled JavaScript.
 
-### Rewrite the script in <head> to the following:
+### Rewrite the script in `<head>` to the following:
 ```
 <script>
     (function(q, v, a, l, e, n, t, o) {
