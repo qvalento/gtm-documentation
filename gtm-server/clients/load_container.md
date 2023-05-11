@@ -19,9 +19,9 @@ To be honest, this probably doesn't do anything good on your website anyways. It
 
         var f = v.getElementsByTagName(a)[0];
         var j = v.createElement(a);
-        e = e ? '?auth=' + e : '',
-        n = n ? '&env=' + n : '',
-        t = l != 'dataLayer' ? 'l=' + l : '',
+        e = e ? '?auth=' + e : '';
+        n = n ? '&env=' + n : '';
+        t = l != 'dataLayer' ? 'l=' + l : '';
         o = e + n + (t ? (e ? '&' : '?') + t : '');
         j.async = true;
         j.src = 'https://[YOUR_CUSTOM_SERVER_HOST]/tm' + o; f.parentNode.insertBefore(j, f);
