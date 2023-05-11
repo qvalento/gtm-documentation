@@ -15,23 +15,30 @@ To be honest, this probably doesn't do anything good on your website anyways. It
 <script>
     (function(q, v, a, l, e, n, t, o) {
         q[l] = q[l] || [];
-        q[l].push({
-            'gtm.start': new Date().getTime(),
-            event: 'gtm.js'
-        });
-        var f = v.getElementsByTagName(a)[0],
-            j = v.createElement(a),
-            n = '?i=' + e,
-            t = l != 'dataLayer' ? '&l=' + l : '',
-            o = n + t;
+        q[l].push({'gtm.start': new Date().getTime(), event: 'gtm.js'});
+
+        var f = v.getElementsByTagName(a)[0];
+        var j = v.createElement(a);
+        e = e ? '?auth=' + e : '',
+        n = n ? '&env=' + n : '',
+        t = l != 'dataLayer' ? 'l=' + l : '',
+        o = e + n + (t ? (e ? '&' : '?') + t : '');
         j.async = true;
-        j.src =
-            'https://[YOUR_CUSTOM_SERVER_HOST]/tm' + o;
-        f.parentNode.insertBefore(j, f);
-    })(window, document, 'script', 'dataLayer', 0);
+        j.src = 'https://[YOUR_CUSTOM_SERVER_HOST]/tm' + o; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer');
 </script>
 ```
-  
+
+## Environments
+If you are using evironments in your GTM Container, you can simply add those by adding the 'gtm_auth' and 'gtm_preview' attributes for the variables 'e' and 'n'. The 'gtm_preview' value should only consist of an integer and not the prefix 'env-'. Here's an example of where to place the values:
+```
+<script>
+    (function(q, v, a, l, e, n, t, o) {
+        // Function code
+    })(window, document, 'script', 'dataLayer', 'YOUR_GTM_AUTH_VALUE', 'YOU_GTM_PREVIEW_VALUE');
+</script>
+```
+
   
 ## Debugging
 When debugging the container, a request will be sent to googletagmanager.com so make sure to turn off ad blockers in those cases.
